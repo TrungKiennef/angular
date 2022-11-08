@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>bai thi cua kien</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="js.js"></script>
+</head>
+<body>
+<div ng-app = "myApp" class = "container" style="width:550px">
+<div style="text-align:center;">
+</div>
+<div ng-controller = "RegisterController">
+<div align="right">
+<a href="#" ng-click="searchUser()">{{title}}</a>
+</div>
+<form role = "form" class="well" ng-hide="ifSearchUser">
+<div class = "form-group">
+<label for = "name"> Name:  </label>
+<input type = "text" id = "name" class = "form-control" placeholder = "Enter Name " ng-model = "newuser.name" required minlength="3" maxlength="100" />>
+</div>
+<div class = "form-group">
+<label for = "email"> Email:  </label>
+<input type = "email" id = "email" class = "form-control" placeholder = "Enter Email " ng-model = "newuser.email" required />
+</div>
+<div class = "form-group">
+<label for = "password"> Password:  </label>
+<input type = "password" id = "password" class = "form-control" placeholder = "Enter Password " ng-model = "newuser.password" required
+pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" />
+</div>
+
+<div class = "form-group">
+<label for = "phone"> Phone:  </label>
+<input type = "number" id = "phone" class = "form-control" placeholder = "Enter Phone " ng-model = "newuser.phone" required
+pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+</div>
+<br>
+<input type="hidden" ng-model="newuser.id">
+<input type="button" class="btn btn-primary" ng-click="saveUser()" class="btn btn-primary" value = "Submit">
+</form>
+</body>
+</html>
